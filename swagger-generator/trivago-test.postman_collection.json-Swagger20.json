@@ -1,0 +1,395 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "trivago-test",
+    "contact": {}
+  },
+  "host": "localhost",
+  "basePath": "/api/v1",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/items": {
+      "get": {
+        "summary": "localhost/api/v1/items",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "localhost/api/v1/items",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/item/1": {
+      "get": {
+        "summary": "localhost/api/v1/item/1",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "localhost/api/v1/item/1",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/item": {
+      "post": {
+        "summary": "localhost/api/v1/item",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "localhost/api/v1/item",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost~1api~1v1~1itemrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "summary": "localhost/api/v1/item",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Putlocalhost/api/v1/item",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost~1api~1v1~1itemrequest1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "summary": "localhost/api/v1/item",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Deletelocalhost/api/v1/item",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost~1api~1v1~1itemrequest2"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/book": {
+      "post": {
+        "summary": "localhost/api/v1/book",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "localhost/api/v1/book",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost~1api~1v1~1bookrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "localhost/api/v1/itemrequest": {
+      "title": "localhost/api/v1/itemrequest",
+      "example": {
+        "name": "Super Hotel For few",
+        "rating": "5",
+        "category": "hotel",
+        "location": {
+          "city": "Berlin",
+          "state": "Berlin",
+          "country": "Germany",
+          "zip_code": "10025",
+          "address": "Invalide nstrasse 31 , 10115, Berlin, Deutschland"
+        },
+        "image": "36400462.webp",
+        "reputation": "836",
+        "price": "140.00",
+        "availability": "5"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/definitions/Location"
+        },
+        "image": {
+          "type": "string"
+        },
+        "reputation": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "availability": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "rating",
+        "category",
+        "location",
+        "image",
+        "reputation",
+        "price",
+        "availability"
+      ]
+    },
+    "Location": {
+      "title": "Location",
+      "example": {
+        "city": "Berlin",
+        "state": "Berlin",
+        "country": "Germany",
+        "zip_code": "10025",
+        "address": "Invalide nstrasse 31 , 10115, Berlin, Deutschland"
+      },
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "zip_code": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "city",
+        "state",
+        "country",
+        "zip_code",
+        "address"
+      ]
+    },
+    "localhost/api/v1/itemrequest1": {
+      "title": "localhost/api/v1/itemrequest1",
+      "example": {
+        "id": "3",
+        "name": "Boutique Hotel i31",
+        "rating": "4",
+        "category": "hotel",
+        "location": {
+          "city": "Berlin",
+          "state": "Berlin",
+          "country": "Germany",
+          "zip_code": "10115",
+          "address": "Invalidenstrasse 31 , 10115, Berlin, Deutschland"
+        },
+        "image": "36400462.webp",
+        "reputation": "490",
+        "price": "102.00",
+        "availability": "20"
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/definitions/Location"
+        },
+        "image": {
+          "type": "string"
+        },
+        "reputation": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "availability": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "rating",
+        "category",
+        "location",
+        "image",
+        "reputation",
+        "price",
+        "availability"
+      ]
+    },
+    "localhost/api/v1/itemrequest2": {
+      "title": "localhost/api/v1/itemrequest2",
+      "example": {
+        "id": "3"
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "localhost/api/v1/bookrequest": {
+      "title": "localhost/api/v1/bookrequest",
+      "example": {
+        "id": "3"
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}

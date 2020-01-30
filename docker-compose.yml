@@ -1,0 +1,55 @@
+version: "3"
+
+services:
+  web:
+    build:
+      context: ./
+      dockerfile: deploy/web.docker
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ./:/var/www
+    ports:
+      - 80:80
+      - 443:443
+    links:
+      - app
+
+  app:
+    build:
+      context: ./
+      dockerfile: deploy/app.docker
+    container_name: app
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ./:/var/www
+    links:
+      - database
+      - cache
+    environment:
+      - "DB_PORT=3306"
+      - "DB_HOST=database"
+      - "REDIS_PORT=6379"
+      - "REDIS_HOST=cache"
+
+  database:
+    image: mysql:5.6
+    environment:
+      - "MYSQL_ROOT_PASSWORD=myrootpass"
+      - "MYSQL_DATABASE=trivagodb"
+    ports:
+      - "33061:3306"
+    container_name: db
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ./mysql-dump:/var/lib/mysql
+      - ./mysql-dump:/docker-entrypoint-initdb.d
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+
+  cache:
+    image: redis:3.0
+    ports:
+      - "63791:6379"

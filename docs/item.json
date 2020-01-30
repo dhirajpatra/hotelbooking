@@ -1,0 +1,17 @@
+{
+    "name": "Example name",
+    "rating": 5,
+    "category": "hotel",
+    "location": {
+        "city": "Cuernavaca",
+        "state": "Morelos",
+        "country": "Mexico",
+        "zip_code": "62448",
+        "address": "Boulevard Díaz Ordaz No. 9 Cantarranas"
+    },
+    "image": "image-url.com", 
+    "reputation": 8990, 
+    "reputationBadge": "green", 
+    "price": 1000, 
+    "availability": 10 
+}

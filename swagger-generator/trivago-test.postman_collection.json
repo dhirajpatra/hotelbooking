@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "115a1eec-6f6a-4fe0-b81f-0964dc71e5ec",
+		"name": "trivago-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost/api/v1/items",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost/api/v1/items",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/api/v1/item/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost/api/v1/item/1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"item",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/api/v1/item",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bb35024b-a4f9-4b11-9688-83a7e8bef37c",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Super Hotel For few\",\n  \"rating\": \"5\",\n  \"category\": \"hotel\",\n  \"location\": {\n    \"city\": \"Berlin\",\n    \"state\": \"Berlin\",\n    \"country\": \"Germany\",\n    \"zip_code\": \"10025\",\n    \"address\": \"Invalide nstrasse 31 , 10115, Berlin, Deutschland\"\n  },\n  \"image\": \"36400462.webp\",\n  \"reputation\": \"836\",\n  \"price\": \"140.00\",\n  \"availability\": \"5\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/v1/item",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/api/v1/item",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"warning": "Key contains invalid characters.",
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"3\",\t\n  \"name\": \"Boutique Hotel i31\",\n  \"rating\": \"4\",\n  \"category\": \"hotel\",\n  \"location\": {\n    \"city\": \"Berlin\",\n    \"state\": \"Berlin\",\n    \"country\": \"Germany\",\n    \"zip_code\": \"10115\",\n    \"address\": \"Invalidenstrasse 31 , 10115, Berlin, Deutschland\"\n  },\n  \"image\": \"36400462.webp\",\n  \"reputation\": \"490\",\n  \"price\": \"102.00\",\n  \"availability\": \"20\"\n}"
+				},
+				"url": {
+					"raw": "localhost/api/v1/item",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/api/v1/item",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": \"3\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/v1/item",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"item"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost/api/v1/book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": \"3\"}"
+				},
+				"url": {
+					"raw": "localhost/api/v1/book",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v1",
+						"book"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
